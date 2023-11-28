@@ -1,0 +1,63 @@
+=====================================
+How to use ``100-matrix_mul`` Module.
+=====================================
+
+This module defines a function ``matrix_mul(m_a, m_b)``
+that performs matrix multiplication between two matrices.
+
+Usage: ``matrix_mul(m_a, m_b)``
+=====
+
+Each elements of the matrices must be of type either `int` or `float`.
+Each row in any of the matrices must have the same collums as other rows
+in thesame matrix.
+
+Examples
+========
+
+:: Fist import the module.
+>>> matrix_mul = __import__('100-matrix_mul').matrix_mul
+
+>>> matrix_mul([[1, 2], [3, 4]], [[1, 2], [3, 4]])
+[[7, 10], [15, 22]]
+
+>>> matrix_mul([[1, 2]], [[3, 4], [5, 6]])
+[[13, 16]]
+
+>>> matrix_mul([[1, 2, 3]], [[3, 6, 4], [5, 9, 6], [4, 1, 9]])
+[[25, 27, 43]]
+
+>>> matrix_mul([[9, 8, 7]], [[3], [5], [4]])
+[[95]]
+
+>>> matrix_mul([[9, 8, 7]], [[0], [0], [0]])
+[[0]]
+
+>>> matrix_mul([[7, -2], [0.8, 14]], [[-4.1, 2], [2.3, 4]])
+... # doctest: +ELLIPSIS
+[[-33.3, 6], [28.91..., 57.6]]
+
+>>> matrix_mul("Not a list", [[-4.1, 2], [2.3, 4]])
+Traceback (most recent call last):
+TypeError: m_a must be a list
+
+>>> matrix_mul([], [[-4.1, 2], [2.3, ]])
+Traceback (most recent call last):
+ValueError: m_a can't be empty
+
+>>> matrix_mul([[7, -2], [0.8, 14]], [[-4.1, 2], [2.3, ]])
+Traceback (most recent call last):
+TypeError: each row of m_b must be of the same size
+
+>>> matrix_mul([[7, -2], [0.8, 14]], [["12345", 2], [2.3, 9 ]])
+Traceback (most recent call last):
+TypeError: m_b should contain only integers or floats
+
+>>> matrix_mul([[7, -2], [0.8, 14]], ["typeerror"])
+Traceback (most recent call last):
+TypeError: m_b must be a list of lists
+
+>>> matrix_mul() # doctest: +NORMALIZE_WHITESPACE
+Traceback (most recent call last):
+TypeError: matrix_mul() missing 2 required 
+    positional arguments: 'm_a' and 'm_b'
