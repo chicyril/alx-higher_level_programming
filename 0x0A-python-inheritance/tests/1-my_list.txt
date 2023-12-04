@@ -1,0 +1,107 @@
+===================================
+How to use the ``1-my_list`` module
+===================================
+
+This module defines a class ``MyList``, a sub-class of the python ``list``.
+The class defines a method ``print_sorted(self)`` that print all the elements
+in the list in sorted order.
+
+Examples:
+========
+
+>>> MyList = __import__('1-my_list').MyList
+
+>>> my_list = MyList((1, 2, 3, 4))
+
+>>> print(my_list)
+[1, 2, 3, 4]
+
+>>> my_list.append(8)
+
+>>> my_list.append(5)
+
+>>> my_list.append(9)
+
+>>> print(my_list)
+[1, 2, 3, 4, 8, 5, 9]
+
+>>> my_list.print_sorted()
+[1, 2, 3, 4, 5, 8, 9]
+
+>>> my_list2 = [9, 7, 5]
+
+>>> my_list.extend(my_list2)
+
+>>> print(my_list)
+[1, 2, 3, 4, 8, 5, 9, 9, 7, 5]
+
+>>> my_list = MyList(set(my_list))
+
+>>> print(my_list)
+[1, 2, 3, 4, 5, 7, 8, 9]
+
+>>> my_list.remove(6)
+Traceback (most recent call last):
+ValueError: list.remove(x): x not in list
+
+>>> my_list.remove(1)
+
+>>> my_list.print_sorted()
+[2, 3, 4, 5, 7, 8, 9]
+
+>>> my_list.pop()
+9
+
+>>> my_list.pop(-6)
+2
+
+>>> my_list.print_sorted()
+[3, 4, 5, 7, 8]
+
+>>> my_list.clear()
+
+>>> print(my_list)
+[]
+
+>>> ml = list((1,2,3))
+
+>>> ml.print_sorted()
+Traceback (most recent call last):
+AttributeError: 'list' object has no attribute 'print_sorted'
+
+>>> mList = MyList()
+
+>>> mList.print_sorted()
+[]
+
+>>> mList.extend((-3,5,-8))
+
+>>> print(mList)
+[-3, 5, -8]
+
+>>> mList.print_sorted()
+[-8, -3, 5]
+
+>>> mList.clear()
+
+>>> mList.append(1)
+
+>>> mList.append(1)
+
+>>> mList.append(1)
+
+>>> print(mList)
+[1, 1, 1]
+
+>>> mList.print_sorted()
+[1, 1, 1]
+
+>>> mL.print_sorted()
+Traceback (most recent call last):
+NameError: name 'mL' is not defined
+
+>>> mL = [1,4]
+
+>>> mL.print_sorted()
+Traceback (most recent call last):
+AttributeError: 'list' object has no attribute 'print_sorted'
