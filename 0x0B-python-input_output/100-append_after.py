@@ -3,7 +3,7 @@
 
 
 def append_after(filename="", search_string="", new_string=""):
-    """Insert a line with new_string after any line containing search_string."""
+    """Insert a line with new_string after line containing search_string."""
     with open(filename, 'r', encoding='utf-8') as file:
         append = False
         new_text = ""
