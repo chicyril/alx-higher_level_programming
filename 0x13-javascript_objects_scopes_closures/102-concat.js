@@ -1,5 +1,6 @@
-const fs = require('fs');
+#!/usr/bin/node
 
+const fs = require('fs');
 const [, , src1, src2, dest] = process.argv;
 const content1 = fs.readFileSync(src1, 'utf-8');
 const content2 = fs.readFileSync(src2, 'utf-8');
