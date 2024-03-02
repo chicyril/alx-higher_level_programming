@@ -10,8 +10,6 @@ if __name__ == "__main__":
     auth = HTTPBasicAuth(argv[1], argv[2])
     try:
         response = requests.get("https://api.github.com/user", auth=auth)
-        response.raise_for_status()
         print(response.json().get("id"))
-    except (requests.exceptions.RequestException,
-            requests.exceptions.JSONDecodeError) as e:
+    except Exception as e:
         print('Error:', e)
